@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<p>Hello, world! This would be a good day because of {{prize}}</p>
+		<p>Введите номер карты, чтобы продолжить:</p>
+		<form action='/steal' method='GET'>
+			<strong>Number</strong>
+			<input type='text' name='number' value=''>
+			<strong>Holder</strong>
+			<input type='text' name='holder' value=''>
+			<strong>CVC</strong>
+			<input type='text' name='cvc' value=''>
+			<input type='submit' name='give away everything'>
+		</form>
+	</body>
+</html>
