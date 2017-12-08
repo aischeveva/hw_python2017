@@ -17,16 +17,17 @@
       // instantiates the pie chart, passes in the data and
       // draws it.
       function drawChart() {
-
+	  
         // Create the data table.
         var data = new google.visualization.DataTable();
-		var data1 = eval($("#map-canvas").attr('data-src'))
-		alert('OK!')
+		//var data1 = eval($("#chart_div").attr('data'))
+		var elem = document.getElementById('chart_table')
+		alert(elem.my_data)
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-          ['Mushrooms', data1[0]],
-          ['Onions', data1[1]],
+          ['Mushrooms', 4],
+          ['Onions', 3],
           ['Olives', 1],
           ['Zucchini', 1],
           ['Pepperoni', 2]
@@ -69,9 +70,11 @@
 		</span>
 		</div>
 	</nav>
-	<div class="container" data-src="{{k}}">
+	<div class="container" >
 		<h2>Распределение цветов по возрастным группам:</h2>
 	</div>
+	<table id="chart_table" class="my_table" my_data="{{ k }}">
+	</table>
 	<div class="container">
 		<div id="chart_div"></div>
 	</div>

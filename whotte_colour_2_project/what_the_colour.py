@@ -4,6 +4,7 @@ from flask import request
 from flask import redirect
 from flask import url_for
 import json
+from collections import OrderedDict
 import os
 
 app = Flask(__name__)
@@ -32,7 +33,7 @@ def draw_stat():
     temp = count_stat()
     with open('statist.json', 'w', encoding='utf-8') as fout:
         json.dump(temp, fout, ensure_ascii=False, indent=4, sort_keys=True)
-    return render_template('stats.html')
+    return render_template('stats.html', k=temp)
 
 
 @app.route('/search')
@@ -46,7 +47,7 @@ def search_smth():
 
 @app.route('/results')
 def search_results():
-    return render_template('results.html', res=search_res)
+    return render_template('results.html', res=OrderedDict(sorted(search_res.items())))
 
 
 def get_values(request):
@@ -94,6 +95,7 @@ def search_this(request):
     else:
         temp_dic['null'] = 'Вы не ввели параметров поиска!'
     return temp_dic
+
 
 def count_stat():
     temp = {}
