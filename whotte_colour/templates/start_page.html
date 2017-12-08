@@ -1,0 +1,174 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Что же это за цвет?</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	</head>
+	<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand">Очень важный опрос</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/">Главная</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="stats">Статистика</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="json" target="_blank">Данные</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="search">Поиск</a>
+			</li>
+			</ul>
+		<span class="navbar-text">
+			Социолингвистика, еее!
+		</span>
+		</div>
+	</nav>
+		<form action="">
+			<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-1">
+					<h5>Ваш пол:</h5>
+					<input type="radio" name="sex" value="fem">женский <input type="radio" name="sex" value="masc">мужской
+					<h5>Ваш родной язык:</h5>
+					<input type="text" name="language">
+				</div>
+				<div class="col-md-4 col-md-offset-1">
+				<h5>Ваш возраст:</h5>
+					<input type="radio" name="age" value="1">меньше 18<Br>
+					<input type="radio" name="age" value="2">от 18 до 24<Br>
+					<input type="radio" name="age" value="3">от 24 до 40<Br>
+					<input type="radio" name="age" value="4">от 40 до 60<Br>
+					<input type="radio" name="age" value="5">больше 60<Br>
+				</div>
+			</div>
+			<div class="row">
+			<div class="col-md col-md-offset-1">
+				<h5>Назовите цвета:</h5>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='navy.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour1" value="синий"> синий
+				<input type="radio" name="colour1" value="голубой"> голубой
+				<input type="radio" name="colour1" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='medium_blue.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour2" value="синий"> синий
+				<input type="radio" name="colour2" value="голубой"> голубой
+				<input type="radio" name="colour2" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='dodger_blue.png')}}"/><Br>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour3" value="синий"> синий
+				<input type="radio" name="colour3" value="голубой"> голубой
+				<input type="radio" name="colour3" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='deep_skyblue.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour4" value="синий"> синий
+				<input type="radio" name="colour4" value="голубой"> голубой
+				<input type="radio" name="colour4" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='skyblue.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour5" value="синий"> синий
+				<input type="radio" name="colour5" value="голубой"> голубой
+				<input type="radio" name="colour5" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='powder_blue.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour6" value="синий"> синий
+				<input type="radio" name="colour6" value="голубой"> голубой
+				<input type="radio" name="colour6" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='pale_turquiose.png')}}"/><Br>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour7" value="синий"> синий
+				<input type="radio" name="colour7" value="голубой"> голубой
+				<input type="radio" name="colour7" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='aquamarine.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour8" value="синий"> синий
+				<input type="radio" name="colour8" value="голубой"> голубой
+				<input type="radio" name="colour8" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='springgreen.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour9" value="синий"> синий
+				<input type="radio" name="colour9" value="голубой"> голубой
+				<input type="radio" name="colour9" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='medium_seagreen.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour10" value="синий"> синий
+				<input type="radio" name="colour10" value="голубой"> голубой
+				<input type="radio" name="colour10" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-2">
+				<img src="{{url_for('static', filename='forestgreen.png')}}"/>
+			</div>
+			<div class ="col-md-6 col-md-offset-1">
+				<input type="radio" name="colour11" value="синий"> синий
+				<input type="radio" name="colour11" value="голубой"> голубой
+				<input type="radio" name="colour11" value="зеленый"> зеленый
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md col-md-offset-1">
+			<input type="submit" value="отправить">
+			</div>
+			</div>
+			</div>
+		</form>
+	</body>
+</html>

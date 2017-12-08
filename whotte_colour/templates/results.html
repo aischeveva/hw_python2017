@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Что же это за цвет?</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	</head>
+	<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">Очень важный опрос</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/">Главная</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="stats">Статистика</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="json" target="_blank">Данные</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="search">Поиск</a>
+			</li>
+			</ul>
+		<span class="navbar-text">
+			Социолингвистика, еее!
+		</span>
+		</div>
+	</nav>
+	<div class="container">
+		<h2>Результаты поиска:</h2>
+		<div class="row">
+			<div class="col-md-1">
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='navy.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='medium_blue.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='dodger_blue.png')}}"/><Br>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='deep_skyblue.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='skyblue.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='powder_blue.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='pale_turquiose.png')}}"/><Br>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='aquamarine.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='springgreen.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='medium_seagreen.png')}}"/>
+			</div>
+			<div class="col-md-1">
+				<img src="{{url_for('static', filename='forestgreen.png')}}"/>
+			</div>
+		</div>
+		{% for k in res%}
+			<div class="row">
+				<div class="col-md-1">
+				{{ k }}, <Br>
+				{% if res[k][0] == "fem" %}
+				Женщина, <Br>
+				{% else %}
+				Мужчина, <Br>
+				{% endif %}
+				{% if res[k][2] == "1"%}
+				Меньше 18 <Br>
+				{% elif res[k][2] == "2"%}
+				От 18 до 24 <Br>
+				{% elif res[k][2] == "3"%}
+				От 24 до 40 <Br>
+				{% elif res[k][2] == "4"%}
+				От 40 до 60 <Br>
+				{% else %}
+				Старше 60 <Br>
+				{% endif %}
+				</div>
+				{% for colour in res[k][3]%}
+					<div class="col-md-1"> {{ colour }}</div>
+				{% endfor %}
+			</div> <Br>
+		{% endfor %}
+	</div>
+	</body>
+</html>
