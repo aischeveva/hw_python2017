@@ -1,0 +1,158 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Что же это за цвет?</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	</head>
+	<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">Очень важный опрос</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+				<a class="nav-link" href="/">Главная</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="stats">Статистика</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="json">Данные</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="search">Поиск</a>
+			</li>
+			</ul>
+		<span class="navbar-text">
+			Социолингвистика, еее!
+		</span>
+		</div>
+	</nav>
+	<div class="container" >
+		<h2>Распределение цветов по возрастным группам:</h2>
+	</div>
+	<table id="chart_table" my_data='{{ k }}'>
+	</table>
+			<!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+	  
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+		var elem = document.getElementById('chart_table').attributes[1].value
+		var my_st = JSON.parse(elem)
+		//alert(my_st['2'])
+        data.addColumn('string', 'Цвет');
+        data.addColumn('number', 'Количество');
+        data.addRows([
+          ['Синий', my_st['1'][0]],
+          ['Голубой', my_st['1'][1]],
+          ['Зеленый', my_st['1'][2]]
+        ]);
+		
+		var data1 = new google.visualization.DataTable();
+        data1.addColumn('string', 'Цвет');
+        data1.addColumn('number', 'Количество');
+        data1.addRows([
+          ['Синий', my_st['2'][0]],
+          ['Голубой', my_st['2'][1]],
+          ['Зеленый', my_st['2'][2]]
+        ]);
+		
+		var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Цвет');
+        data2.addColumn('number', 'Количество');
+        data2.addRows([
+          ['Синий', my_st['3'][0]],
+          ['Голубой', my_st['3'][1]],
+          ['Зеленый', my_st['3'][2]]
+        ]);
+		
+		var data3 = new google.visualization.DataTable();
+        data3.addColumn('string', 'Цвет');
+        data3.addColumn('number', 'Количество');
+        data3.addRows([
+          ['Синий', my_st['4'][0]],
+          ['Голубой', my_st['4'][1]],
+          ['Зеленый', my_st['4'][2]]
+        ]);
+		
+		var data4 = new google.visualization.DataTable();
+        data4.addColumn('string', 'Цвет');
+        data4.addColumn('number', 'Количество');
+        data4.addRows([
+          ['Синий', my_st['5'][0]],
+          ['Голубой', my_st['5'][1]],
+          ['Зеленый', my_st['5'][2]]
+        ]);
+		
+        // Set chart options
+		//'#e0440e', '#e6693e', '#ec8f6e' #3BB171
+        var options = {title:'младше 18',
+                       width:400,
+                       height:300,
+					   colors: ['#1272BC', '#41ABFC', '#63B13B']};
+		var options1 = {title:'от 18 до 24',
+                       width:400,
+                       height:300,
+					   colors: ['#1272BC', '#41ABFC', '#63B13B']};
+		var options2 = {title:'от 24 до 40',
+                       width:400,
+                       height:300,
+					   colors: ['#1272BC', '#41ABFC', '#63B13B']};
+		var options3 = {title:'от 40 до 60',
+                       width:400,
+                       height:300,
+					   colors: ['#1272BC', '#41ABFC', '#63B13B']};
+		var options4 = {title:'старше 60',
+                       width:400,
+                       height:300,
+					   colors: ['#1272BC', '#41ABFC', '#63B13B']};
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div_1'));
+		var chart1 = new google.visualization.PieChart(document.getElementById('chart_div_2'));
+		var chart2 = new google.visualization.PieChart(document.getElementById('chart_div_3'));
+		var chart3 = new google.visualization.PieChart(document.getElementById('chart_div_4'));
+		var chart4 = new google.visualization.PieChart(document.getElementById('chart_div_5'));
+        chart.draw(data, options);
+		chart1.draw(data1, options1);
+		chart2.draw(data2, options2);
+		chart3.draw(data3, options3);
+		chart4.draw(data4, options4);
+      }
+	 </script>
+	<div class="container">
+	<div class="row">
+	<div class="col-md-4">
+		<div id="chart_div_1"></div>
+	</div>
+	<div class="col-md-4 col-md-offset-1">
+		<div id="chart_div_2"></div>
+	</div>
+	<div class="col-md-4 col-md-offset-1">
+		<div id="chart_div_3"></div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col-md-5">
+		<div id="chart_div_4"></div>
+	</div>
+	<div class="col-md-5 col-md-offset-2">	
+		<div id="chart_div_5"></div>
+	</div>
+	</div>
+	</body>
+</html>

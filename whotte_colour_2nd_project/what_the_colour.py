@@ -33,7 +33,7 @@ def draw_stat():
     temp = count_stat()
     with open('statist.json', 'w', encoding='utf-8') as fout:
         json.dump(temp, fout, ensure_ascii=False, indent=4, sort_keys=True)
-    return render_template('stats.html', k=temp)
+    return render_template('stats1.html', k=json.dumps(OrderedDict(sorted(temp.items())), ensure_ascii=False, indent=4, sort_keys=True))
 
 
 @app.route('/search')
@@ -99,7 +99,7 @@ def search_this(request):
 
 def count_stat():
     temp = {}
-    for i in range(1, 5):
+    for i in range(1, 6):
         temp[str(i)] = [0, 0, 0]
     for k in j_dict:
         for t in j_dict[k][3]:
