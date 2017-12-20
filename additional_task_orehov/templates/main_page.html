@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Дореволюцiонная орѳографія</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+<div class="container-fluid">
+	<!-- header -->
+	<div class="row">
+		<div class="col-md-6 col-xs-8">
+			<h1>Дореволюцiонная орѳографія</h1>
+			<p>...и прочiя радости жизни</p>
+		</div>
+		<div class="col-md-6 col-xs-4">
+			<img src="{{url_for('static', filename='img/logo3.png')}}" />
+		</div>
+	</div>
+	<!-- main info -->
+	<div class="row">
+		<!-- word translate -->
+		<div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-6">
+			<h5>Переводим слово</h5>
+			<p>(в начальной форме)</p>
+			<form method="GET">
+				<p><input type="text" name="word" value=""></p>
+				<p><input type="submit" value="Перевести!"></p>
+			</form>
+			{{ print_word }}
+		</div>
+		<!-- weather in Skopje -->
+		<div class="col-xl-3 col-xl-offset-1 col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-6 col-offset-1 order-12">
+			<h5>Погода в Скопье</h5>
+			<p>{{ fact_temp }}, {{ fact_cond }}</p>
+			<p>{{ feel_like }}</p>
+		</div>
+		<!-- newsletters -->
+		<div class="col-xl-2 col-xl-offset-1 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-6 col-offset-1">
+			<h5>Читаем новости</h5>
+			<form method="GET">
+				<p><input type="submit" name="news" value="Кликабельно!"></p>
+			</form>
+		</div>
+		<!-- test -->
+		<div class="col-xl-2 col-xl-offset-1 col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-6 col-offset-1">
+			<h5>Проходим тест</h5>
+			<form method="GET">
+				<input type="submit" name="test" value="Кликабельно!">
+			</form>
+		</div>
+	</div>
+	<!-- footer -->
+</div>
+</body>
+</html>

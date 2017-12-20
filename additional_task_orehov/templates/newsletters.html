@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Дореволюцiонная орѳографія</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+</head>
+<body>
+<div class="container-fluid">
+	<!-- header -->
+	<div class="row">
+		<div class="col-md-6 col-xs-8">
+			<h1>Дореволюцiонная орѳографія</h1>
+			<p>...и Орскiя хроники</p>
+		</div>
+		<div class="col-md-6 col-xs-4">
+			<img src="{{url_for('static', filename='img/logo3.png')}}" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md"><p>{{ text }}<br></p></div>
+		<div class="col-md col-md-offset-1">
+		<h5>Топ-10 слов</h5>
+			{% for line in rez%}
+			<li>{{ line }}</li></Br>
+			{% endfor %}
+		</div>
+	</div>
+	<!-- footer -->
+</div>
+</body>
+</html>
