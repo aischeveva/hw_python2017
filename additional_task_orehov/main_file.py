@@ -32,7 +32,7 @@ def news():
         if 'analysis' in word:
             if len(word['analysis']) > 0:
                 if 'lex' in word['analysis'][0]:
-                    if word['analysis'][0]['lex'] in dorev and ('е' in word['analysis'][0]['lex'] or 'и' in word['analysis'][0]['lex'] or 'ф' in word['analysis'][0]['lex']):
+                    if word['analysis'][0]['lex'] in dorev and ('е' in word['analysis'][0]['lex'] or 'и' in word['analysis'][0]['lex'] or 'ф' in word['analysis'][0]['lex'] or 'Ф' in word['analysis'][0]['lex']) and ('е' in word['text'] or 'и' in word['text'] or 'ф' in word['text'] or 'Ф' in word['text']):
                         for j, l in enumerate(dorev[word['analysis'][0]['lex']]):
                             if l == 'ѣ' or l == 'Ѳ' or l == 'ѳ' or l == 'ѵ':
                                 arr_stem[i]['text'] = arr_stem[i]['text'][:j] + l + arr_stem[i]['text'][j+1:]
